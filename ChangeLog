@@ -1,0 +1,102 @@
+2020-08-29  Richard Johnston  <techpowerawaits@outlook.com>
+  First stable version. Provides version number on launch.
+
+	* add.c: Created ver() function to display version numbers.
+
+	Created new_space() function to clarify code.
+
+	Created pname() function to print name of program.
+
+	* add.c (main): Now uses pname(), new_space(), and ver()
+	to print program name and versioning information with
+	space inbetween. This occurs before license is printed.
+
+2020-08-29  Richard Johnston  <techpowerawaits@outlook.com>
+  Getting closer to stable version API. New minor version.
+
+	* add.c: Removed the VER constant and replaced it with
+  the MAJOR_VER, MINOR_VER, PATCH_VER, ALPHA_VER, BETA_VER,
+  and RC_VER in response to the fact that it was difficult
+  to print a version scheme with multiple periods.
+  Defined MINOR_VER as 9 while everything else is 0.
+
+  Re-commented everything after a file corruption resulted
+  in the loss of all comments for the previous version
+  (0.8.0).
+
+2020-08-28  Richard Johnston  <techpowerawaits@outlook.com>
+  Major refractoring. New minor version.
+
+	* add.c: Include ctype.h library for new capitalize function.
+  Introduced capitalize(char letter) function which
+  returns toupper.
+	* add.c (cont): cont_var is now defined by getchar() passed
+  to capitalize(char letter) to simplify if statements to deal
+  with capital letters only.
+
+	* add.c (license): Introduced license() function to display
+  licensing information on execution.
+	* add.c (main): Added license() reference at beginning of
+  function.
+
+	* add.c (new_line): Introduced new_line() function which
+  adds a blank line using puts().
+	* add.c (cont): Replaced all puts("") references with new_line().
+
+	* ChangeLog: Added missing period.
+
+2020-08-28  Richard Johnston  <techpowerawaits@outlook.com>
+  Adds compatibility with minGW-w64. New minor version.
+
+	* add.c (main): Switched to using double for variables
+  for greater compatibility.
+
+	* ChangeLog: Removed extra space.
+
+2020-08-28  Richard Johnston  <techpowerawaits@outlook.com>
+  Stops cont() from interpreting whitespace. New minor version.
+
+	* add.c (main): Removed dup ref to cont() function before
+  if statement.
+  Simplified if statement to cont() not true.
+
+	* add.c (cont): Added getchar() to absorb whitespace from
+	printf continue question.
+
+2020-08-27  Richard Johnston  <techpowerawaits@outlook.com>
+	Major refactoring. Aims to fix looping problems
+	introduced with version 0.3.0. New minor version.
+
+	* add.c (main): do while loop replaced with infinite
+	while loop.
+
+	* add.c (cont): Moved continue prompt to new function.
+	cont variable moved from main and renamed cont_var
+	While loop used to repeat prompt in case of user-error.
+
+2020-08-27  Richard Johnston  <techpowerawaits@outlook.com>
+
+	An attempt at better code. New minor version.
+
+	* add.c (main): cont variable is defined using getchar()
+	and not printf.
+
+2020-08-27  Richard Johnston  <techpowerawaits@outlook.com>
+
+	Added looping. New minor version.
+
+	* add.c (main): do while loop added.
+	New var char cont.
+	Prompt added asking user to continue.
+
+2020-08-20  Richard Johnston  <techpowerawaits@outlook.com>
+
+	New minor version.
+
+	* add.c (main): Switched to using long floats for percision.
+
+2020-08-20  Richard Johnston  <techpowerawaits@outlook.com>
+
+	Initial release.
+
+	* add.c (main): Supports adding two numbers together using floats.
